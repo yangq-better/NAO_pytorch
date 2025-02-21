@@ -10,7 +10,7 @@ fixed_arc="0 7 1 15 2 8 1 7 0 6 1 7 0 8 4 7 1 5 0 7 0 7 1 13 0 6 0 14 0 9 1 10 0
 
 python train_cifar.py \
   --data=$DATA_DIR \
-  --output_dir=$OUTPUT_DIR \
-  --arch="$fixed_arc" \
-  --use_aux_head \
-  --cutout_size=16 | tee -a $OUTPUT_DIR/train.log
+  --output_dir=$OUTPUT_DIR \ 
+  --arch="$fixed_arc" \ #使用之前定义的神经网络架构
+  --use_aux_head \ # 使用辅助分类头
+  --cutout_size=16 | tee -a $OUTPUT_DIR/train.log # cutout是一种数据增强方法
